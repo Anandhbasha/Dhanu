@@ -106,16 +106,74 @@
 # print(countofElements([1, 2, 2, 5, 7, 2, 9],2))
 
 
-# Find Index
-def firstandLast(arr,key):
-    start = -1
-    end =-1
+# # Find Index
+# def firstandLast(arr,key):
+#     start = -1
+#     end =-1
 
-    for i in range (len(arr)):
-        if arr[i]==key:
-            if start==-1:
-                start=i
-            end=i
-    return [start,end]
+#     for i in range (len(arr)):
+#         if arr[i]==key:
+#             if start==-1:
+#                 start=i
+#             end=i
+#     return [start,end]
     
-print(firstandLast([1, 2, 3, 4, 5, 5],5))
+# print(firstandLast([1, 2, 3, 4, 5, 5],5))
+
+# Find the element before which all the elements are smaller than it, and after which all are greater
+
+# def findElement(arr):
+#     n = len(arr)
+#     for i in range(n):
+#         leftOk = True
+#         RightOk = True
+#         for j in range(i):
+#             if arr[j]>arr[i]:
+#                 leftOk=False
+#                 break
+#         for j in range(i+1,n):
+#             if arr[j]<arr[i]:
+#                 RightOk=False
+#                 break
+#         if leftOk and RightOk:
+#             return arr[i]
+#     return -1
+
+# print(findElement([5, 1, 4, 3, 6, 8, 10, 7, 9]))
+
+# min = lambda a,x:a>x
+
+# print(min(5,6))
+
+# Sort elements by frequency
+
+from collections import Counter
+
+# def sortbyFreq(arr):
+#     freq = Counter(arr)
+#     arr.sort(key= lambda x:(-freq[x],x))
+#     return arr
+
+
+# print(sortbyFreq([5, 5, 4, 6, 4]))
+
+# freq ={4:2,5:2,6:1}
+# #4->(-4,4)
+# # 5->(-5,5)
+# #6->(-1,6)
+
+# {4,4,5,5,6}
+
+
+# Find the two repeating elements in a given array
+
+def findReapeating(arr):
+    freq = Counter(arr)
+    res = []
+    for num in arr:
+        if freq[num] ==2:
+            res.append(num)
+            freq[num] = 0
+    return res
+
+print(findReapeating([4, 2, 4, 5, 2, 3, 1]))
