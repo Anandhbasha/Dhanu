@@ -353,44 +353,107 @@
 # print(reverseWords("i.like.this.program.very.much"))
 
 
-def rearrange(arr):
-    pos = []
-    neg = []
+# def rearrange(arr):
+#     pos = []
+#     neg = []
 
-    # O(n)
-    for x in arr:
-        if x >= 0:
-            pos.append(x)
-        else:
-            neg.append(x)
+#     # O(n)
+#     for x in arr:
+#         if x >= 0:
+#             pos.append(x)
+#         else:
+#             neg.append(x)
 
-    res = []
-    i = j = 0
+#     res = []
+#     i = j = 0
 
-    # First: alternate 2 times (+ - + -)
-    for _ in range(2):
-        if i < len(pos) and j < len(neg):
-            res.append(pos[i]); i += 1
-            res.append(neg[j]); j += 1
+#     # First: alternate 2 times (+ - + -)
+#     for _ in range(2):
+#         if i < len(pos) and j < len(neg):
+#             res.append(pos[i]); i += 1
+#             res.append(neg[j]); j += 1
 
-    #+ -
-    if i < len(pos):
-        res.append(pos[i]); i += 1
-    if j < len(neg):
-        res.append(neg[j]); j += 1
+#     #+ -
+#     if i < len(pos):
+#         res.append(pos[i]); i += 1
+#     if j < len(neg):
+#         res.append(neg[j]); j += 1
 
-    # Remaining: alternate
-    while i < len(pos) and j < len(neg):
-        res.append(pos[i]); i += 1
-        res.append(neg[j]); j += 1
+#     # Remaining: alternate
+#     while i < len(pos) and j < len(neg):
+#         res.append(pos[i]); i += 1
+#         res.append(neg[j]); j += 1
 
-    # Leftovers
-    while i < len(pos):
-        res.append(pos[i]); i += 1
-    while j < len(neg):
-        res.append(neg[j]); j += 1
+#     # Leftovers
+#     while i < len(pos):
+#         res.append(pos[i]); i += 1
+#     while j < len(neg):
+#         res.append(neg[j]); j += 1
 
+#     return res
+
+
+# print(rearrange([9, 4, -2, -1, 5, 0, -5, -3, 2]))
+
+# def fibb(n):
+#     if n==0:
+#         return 0
+#     if n==1:
+#         return 1
+#     return fibb(n-1)+fibb(n-2)
+
+# print(fibb(5))
+
+def fact(n):
+    res = 1
+    for i in range(1,n+1): #5 
+        res = res*i
     return res
 
+print(fact(5))
 
-print(rearrange([9, 4, -2, -1, 5, 0, -5, -3, 2]))
+# class Students:
+#     studentName = "Arun"
+#     studentTotal = 420
+#     studentRollNo="11ME784"
+#     def marks(self):
+#         print(self.studentName,self.studentTotal)
+
+# Stu1 = Students()
+# print(Stu1.studentName)
+# Stu1.studentName ="Ajay"
+# print(Stu1.studentName)
+# print(Stu1.studentTotal)
+# stu2 = Students()
+# stu2.studentTotal="489"
+# stu2.marks()
+
+
+
+# class Students:
+#     def __init__(self,name,age):
+#         self.name=name
+#         self.age =age
+#     def display(self):
+#         print("name:",self.name)
+#         print("age:",self.age)
+
+# stu = Students("Vijay",32)
+# stu.display()
+
+
+
+class Father:
+    property="House"
+class son(Father):
+    def prints(self):
+        print(self.property)
+class doughter(Father):
+    def prints(self):
+        print(self.property)
+
+s=son()
+s.prints()
+d=doughter()
+d.prints()
+
